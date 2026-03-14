@@ -129,12 +129,5 @@ export default function WashmasterApp() {
       />
       );
     }
-  
-    if (view === "customer") {
-      return (
-        <CustomerView
-          boleta={lastBoleta}
-        />
-      );
-    }
+
   }
