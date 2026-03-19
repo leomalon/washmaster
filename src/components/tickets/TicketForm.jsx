@@ -1,6 +1,6 @@
 import { User, Shirt, Plus, Trash2, Calendar } from "lucide-react";
 
-export default function ClientForm({
+export default function TicketForm({
     client,
     setClient,
     items,

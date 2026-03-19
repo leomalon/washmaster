@@ -2,15 +2,14 @@
 
 import { useState,useMemo } from "react";
 
-import ClientForm from "./ClientForm";
-import TicketView from "./TicketView";
-import CustomerView from "./CustomerView";
+import TicketForm  from "./TicketForm";
+import TicketDetailView  from "./TicketDetailView";
 
 
-export default function WashmasterApp() {
+export default function TicketApp() {
 
     // --- NAVIGATION STATE ---
-    const [view, setView] = useState("form");
+    const [view, setView] = useState('form');
 
     // --- CLIENT DEFAULT DATA ---
     const [client, setClient] = useState({
@@ -19,10 +18,10 @@ export default function WashmasterApp() {
     });
   
     const [items, setItems] = useState([
-      { id: "1", descripcion: "CAMISA RAYADA", precio: 30 }
+      { id: "1", descripcion: "", precio: 0 }
     ]);
   
-    const [deliveryDays, setDeliveryDays] = useState(7);
+    const [deliveryDays, setDeliveryDays] = useState(1);
     const [customDate, setCustomDate] = useState("");
     const [lastBoleta, setLastBoleta] = useState(null);
 
@@ -99,8 +98,7 @@ export default function WashmasterApp() {
   
     if (view === "form") {
       return (
-        <>
-          <ClientForm
+          <TicketForm
             client={client}
             setClient={setClient}
             items={items}
@@ -114,14 +112,13 @@ export default function WashmasterApp() {
             handleEmitir={handleEmitir}
             total={total}
           />
-  
-        </>
+
       );
     }
   
     if (view === "ticket") {
       return (
-        <TicketView
+        <TicketDetailView
         boleta={lastBoleta}
         setView={setView}
         sendWhatsApp={sendWhatsApp}

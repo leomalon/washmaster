@@ -1,6 +1,6 @@
 import { ArrowLeft, MessageCircle, Printer } from "lucide-react";
 
-export default function TicketView({ boleta, setView, sendWhatsApp, resetForm }) {
+export default function TicketDetailView({ boleta, setView, sendWhatsApp, resetForm }) {
 
     if (!boleta) return null;
   
